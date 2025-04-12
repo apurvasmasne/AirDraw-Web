@@ -1,0 +1,134 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #008080, #ffffff); /* Lavender to white gradient */
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideIn 0.6s ease-in-out forwards; /* Smooth form entry animation */
+}
+
+/* Form Heading */
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 38px;
+    color: #6a5acd; /* Lavender color */
+    margin-bottom: 30px;
+}
+
+/* Input Fields */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: #fafafa; /* Light background for inputs */
+}
+
+input:focus {
+    border-color: #6a5acd; /* Lavender color on focus */
+    outline: none;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 15px;
+    background: #6a5acd; /* Lavender background */
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #7c6bcf; /* Slightly darker lavender on hover */
+    transform: translateY(-4px);
+}
+
+/* Link Styling */
+p a {
+    text-decoration: none;
+    color: #6a5acd; /* Lavender color */
+    font-weight: 500;
+}
+
+p a:hover {
+    color: #7c6bcf; /* Slightly darker lavender on hover */
+    text-decoration: underline;
+}
+
+.back-home {
+    text-decoration: none;
+    color: #6a5acd; /* Lavender color */
+    font-weight: 500;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.back-home:hover {
+    color: #7c6bcf; /* Slightly darker lavender on hover */
+    text-decoration: underline;
+}
+
+/* Smooth animation for form */
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 30px 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+}

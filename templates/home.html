@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIRDRAW - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <h1>AIRDRAW</h1>
+    </div>
+    <nav>
+      <ul>
+        {% if current_user.is_authenticated %}
+        <li><a href="{{ url_for('drawing') }}" class="cta-btn">Start Drawing</a></li>
+        <li><a href="{{ url_for('logout') }}" class="cta-btn">Logout</a></li>
+        {% else %}
+        <li><a href="{{ url_for('login') }}" class="cta-btn">Log In</a></li>
+        <li><a href="{{ url_for('signup') }}" class="cta-btn">Sign Up</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Where Your Imagination Takes Flight</h2>
+      <p>Unleash your creativity and draw with the power of gestures. Create amazing artwork with AIRDRAW!</p>
+      <a href="{{ url_for('drawing') if current_user.is_authenticated else url_for('signup') }}" class="cta-btn large">
+        {% if current_user.is_authenticated %}
+        Start Drawing
+        {% else %}
+        Join Now and Start Drawing
+        {% endif %}
+      </a>
+    </div>
+  </section>
+
+  <!-- How AIRDRAW Works Section (Image Carousel) -->
+  <section class="how-it-works">
+    <h3>How AIRDRAW Works</h3>
+    <div class="steps-container">
+      <div class="steps">
+        <div class="step left">
+          <img src="/static/images/signup_page.jpg" alt="Step 1">
+          <p>Sign Up to get create an account.</p>
+        </div>
+        <div class="step right">
+          <img src="/static/images/login_page.jpg" alt="Step 2">
+          <p>Log In to start Drawing.</p>
+        </div>
+        <div class="step left">
+          <img src="/static/images/drawing_page.jpg" alt="Step 3">
+          <p>Use your hands to draw in the air! Share your art with the community.</p>
+        </div>
+      </div>
+      <button class="prev-btn">&#8592;</button>
+      <button class="next-btn">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- Video Section (before Footer) -->
+  <section class="video-section">
+    <div class="video-container">
+      <video id="airdraw-video" width="100%" controls autoplay>
+        <source src="/static/videos/drawing_page_recorded.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="social-links">
+      <div class="social-item">
+        <img src="/static/images/instagram.png" alt="Instagram" class="social-icon-img">
+        <a href="#" class="social-icon">Instagram</a>
+      </div>
+      <div class="social-item">
+        <img src="/static/images/X.jpg" alt="Twitter" class="social-icon-img">
+        <a href="#" class="social-icon">X</a>
+      </div>
+      <div class="social-item">
+        <img src="/static/images/youtube.png" alt="YouTube" class="social-icon-img">
+        <a href="#" class="social-icon">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Contact</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+    </div>
+  </footer>
+
+  <script src="/static/js/script.js"></script>
+</body>
+
+</html>

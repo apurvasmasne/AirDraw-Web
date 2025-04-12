@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Video Feed</title>
+    <link href="/static/css/drawing.css" rel="stylesheet">
+    <script src="/static/js/drawing.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Express Your Creativity</h1>
+
+        <!-- Color Section -->
+        <div class="color-section">
+            <div class="color-box color-red" onclick="selectColor(0);" tabindex="0" aria-label="Select Red"
+                role="button"></div>
+            <div class="color-box color-green" onclick="selectColor(1);" tabindex="0" aria-label="Select Green"
+                role="button"></div>
+            <div class="color-box color-blue" onclick="selectColor(2);" tabindex="0" aria-label="Select Blue"
+                role="button"></div>
+            <div class="color-box color-yellow" onclick="selectColor(3);" tabindex="0" aria-label="Select Yellow"
+                role="button"></div>
+            <div class="color-box color-black" onclick="selectColor(4);" tabindex="0" aria-label="Select Black"
+                role="button"></div>
+            <div class="color-box color-white" onclick="selectColor(5);" tabindex="0" aria-label="Select White"
+                role="button"></div>
+            <div class="color-box color-cyan" onclick="selectColor(6);" tabindex="0" aria-label="Select Cyan"
+                role="button"></div>
+            <div class="color-box color-pink" onclick="selectColor(7);" tabindex="0" aria-label="Select Pink"
+                role="button"></div>
+            <div class="color-box color-purple" onclick="selectColor(8);" tabindex="0" aria-label="Select Purple"
+                role="button"></div>
+            <div class="color-box color-pastel-blue" onclick="selectColor(9);" tabindex="0"
+                aria-label="Select Pastel Blue" role="button"></div>
+            <div class="color-box color-olive-green" onclick="selectColor(a);" tabindex="0"
+                aria-label="Select Olive Green" role="button"></div>
+            <div class="color-box color-light-grey" onclick="selectColor(c);" tabindex="0"
+                aria-label="Select Light Grey" role="button"></div>
+            <div class="color-box color-gold" onclick="selectColor(b);" tabindex="0" aria-label="Select Gold"
+                role="button"></div>
+            <div class="color-box color-lavender" onclick="selectColor(c);" tabindex="0" aria-label="Select Lavender"
+                role="button"></div>
+            <div class="color-box color-midnight blue" onclick="selectColor(c);" tabindex="0"
+                aria-label="Select Midnight Blue" role="button"></div>
+        </div>
+
+        <!-- Canvas Section -->
+        <div class="canvas-section">
+            <img src="{{ url_for('stream') }}" alt="Live video stream">
+        </div>
+
+        <!-- Button Section -->
+        <div class="button-section">
+            <button class="btn btn-danger" onclick="clearCanvas()">Clear Canvas</button>
+            <button class="btn btn-success" onclick="saveCanvas()">Save Canvas</button>
+            <button class="btn btn-secondary" onclick="window.location.href='/'">Back to Home</button>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

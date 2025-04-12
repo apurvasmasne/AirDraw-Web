@@ -1,0 +1,468 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #ffd4d4, #f0f8ff);
+  color: #333;
+  margin: 0;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(135deg, #6a4c93, #2a9d8f);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 20px 20px;
+}
+
+header .logo h1 {
+  font-family: 'Itim', cursive;
+  color: #fff;
+  font-size: 48px;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.5s ease, color 0.5s ease;  /* Add transition effects */
+  background: transparent;  /* Keep the background transparent initially */
+  padding: 10px;
+  display: inline-block; /* To make sure padding works properly */
+}
+
+/* Hover Effect */
+header .logo h1:hover {
+  transform: scale(1.1) rotateY(20deg); /* Scale and rotate the heading */
+  color: #fff; /* Text color remains white */
+  background: linear-gradient(135deg, #ff6f61, #f76c6c);  /* Gradient color on hover */
+  -webkit-background-clip: text;  /* Clip the gradient to the text */
+  background-clip: text;  /* Clip the gradient to the text */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(0, 0, 0, 0.3); /* Maintain shadow */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #f76c6c;
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(255, 220, 220, 0.9), rgba(240, 248, 255, 0.9)), url('path/to/hero-background.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  background-attachment: fixed;  /* Creates the parallax scrolling effect */
+  overflow: hidden;  /* Ensures the hero section looks clean */
+}
+
+.hero-content {
+  max-width: 600px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  animation: fadeInUp 1.5s ease-out;  /* Fade and slide-up animation for text */
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 70px;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero p {
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #f76c6c;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #ff4655;
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);  /* Enhanced shadow effect */
+}
+
+.cta-btn.large {
+  font-size: 26px;
+  padding: 20px 50px;
+}
+
+/* Text Fade In and Slide Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);  /* Start off-screen */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);  /* End in place */
+  }
+}
+
+/* Subtle Background Animation */
+@keyframes heroBackgroundAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.hero {
+  animation: heroBackgroundAnimation 30s infinite linear;
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+}
+
+.how-it-works h3 {
+  font-size: 36px;
+  color: #6a4c93;
+  margin-bottom: 30px;
+  font-family: 'Pacifico', cursive;
+}
+
+.steps-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 550px;
+}
+
+.steps {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  height: 500px
+}
+
+.step {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  text-align: center;
+  margin: 20px;
+  padding: 30px;
+  background: #f4f4f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 500px;
+}
+
+.step img {
+  width: auto;
+  max-width: none; 
+  height: 100%;
+  object-fit: contain;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.step p {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  line-height: 1.6;
+  color: #333;
+  padding: 10px;
+  margin: 0;
+  max-width: 400px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Fade-in effect for the current step */
+.step.fade-in {
+  opacity: 1 !important;
+}
+
+/* Alternate image and text layout */
+.step.left {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step.right {
+  flex-direction: row-reverse;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Step Layout for Left */
+.step.left p {
+  text-align: left; 
+}
+
+/* Step Layout for Right */
+.step.right p {
+  text-align: right; 
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column; /* Stack the image and text vertically */
+    height: auto;           /* Allow the height to adjust automatically */
+  }
+
+  .step img {
+    width: 100%;            /* Image takes full width on smaller screens */
+    max-width: 100%;        /* No max-width limitation */
+    height: auto;           /* Allow the height to adjust automatically */
+  }
+
+  .step p {
+    max-width: 100%;        /* Allow the paragraph to take full width */
+    padding: 15px 0;        /* Add more padding for mobile */
+  }
+}
+
+/* Video Section */
+.video-section {
+  padding: 80px 20px;
+  background-color: rgba(56, 169, 161, 0.3); /* Soft pastel light blue background */
+  text-align: center;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark overlay effect */
+.video-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);  /* Softer, darker overlay */
+  z-index: 1;
+  border-radius: 30px;
+}
+
+/* Video Container Styling */
+.video-container {
+  position: relative;
+  max-width: 80%;
+  width: 900px;  /* Larger width for more impact */
+  margin: 0 auto;
+  background-color: #fff;  /* White background for the video container */
+  border-radius: 20px;
+  z-index: 2;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for the video container */
+.video-container:hover {
+  transform: scale(1.05);  /* Slight zoom effect */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);  /* Deeper shadow on hover */
+}
+
+#airdraw-video {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 5px solid #fff;  /* Soft white border around the video */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);  /* Subtle shadow around the video */
+  transition: all 0.3s ease;
+}
+
+/* Focus effect on the video */
+#airdraw-video:focus {
+  outline: none;
+  box-shadow: 0 0 15px 5px rgba(255, 182, 193, 0.8);  /* Soft pink glow when focused */
+}
+
+/* Text above the video */
+.video-section h3 {
+  font-size: 36px;
+  font-family: 'Pacifico', cursive;
+  color: #ffffff;  /* White text to contrast against the pastel background */
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  /* Subtle text shadow */
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .video-container {
+    width: 100%;  /* Make the video container full-width on mobile */
+    margin: 0 20px;
+  }
+
+  .video-section h3 {
+    font-size: 30px;  /* Adjust heading size on smaller screens */
+  }
+}
+
+/* Footer Section */
+footer {
+  background: #6a4c93;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+footer .social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+footer .social-icon-img {
+  width: 40px;  /* Adjust image size */
+  height: 40px; /* Adjust image size */
+  margin-bottom: 10px; /* Space between image and text */
+}
+
+footer .social-icon {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+  color: #f76c6c; /* Change color on hover */
+}
+
+footer .footer-links {
+  font-size: 14px;
+}
+
+footer .footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .step.left,
+  .step.right {
+    flex-direction: column;
+  }
+}

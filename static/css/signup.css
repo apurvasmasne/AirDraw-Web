@@ -1,0 +1,142 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6; /* Soft light gray background */
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form Container */
+.form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #a7d8d2, #fff5a3); /* Soft pastel teal to pastel yellow gradient */
+}
+
+.form-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideIn 0.6s ease-in-out forwards; /* Smooth animation */
+}
+
+/* Form Heading */
+h1 {
+    font-size: 32px;
+    font-weight: 500;
+    color: #5c6bc0; /* Soft pastel blue */
+    margin-bottom: 30px;
+}
+
+/* Input Fields */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: #fafafa; /* Light background for inputs */
+}
+
+input:focus {
+    border-color: #ff6f61; /* Soft coral color on focus */
+    outline: none;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff6f61, #ff9b7f); /* Soft coral to pastel peach gradient */
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff9b7f, #ff6f61);
+    transform: translateY(-4px);
+}
+
+/* Link Styling */
+p a {
+    text-decoration: none;
+    color: #ff6f61; /* Soft coral color */
+    font-weight: 500;
+}
+
+p a:hover {
+    color: #ff9b7f; /* Light peach on hover */
+    text-decoration: underline;
+}
+
+.back-home {
+    text-decoration: none;
+    color: #5c6bc0; /* Soft blue for back to home link */
+    font-weight: 500;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.back-home:hover {
+    color: #3f51b5; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* Smooth animation for form */
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-content {
+        padding: 30px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+}
